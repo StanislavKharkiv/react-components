@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Card } from "./components/Card";
+import { PriceCard } from "./components/PriceCard";
+import { Section } from "./components/layout/Section";
+import { Flex } from "./components/layout/Flex";
 
-function App() {
+const data = ["стрижки", "борода", "прически"];
+const priceData = [
+  { name: "стрижки", price: 38 },
+  { name: "Борода", price: 34 },
+  { name: "бритье", price: 36 },
+  { name: "лезвие бтирвы", price: 89 },
+];
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Section header="Наши услуги">
+        <Flex justify="center" gap="10">
+          {data.map((text) => {
+            return <Card text={text} key={text} />;
+          })}
+        </Flex>
+      </Section>
+      <Section className="price" header="Наши цены">
+        <Flex wrap justify="center" gap="10">
+          {priceData.map(({ name, price }) => (
+            <PriceCard name={name} price={price} key={name} />
+          ))}
+        </Flex>
+      </Section>
+    </main>
   );
 }
-
-export default App;

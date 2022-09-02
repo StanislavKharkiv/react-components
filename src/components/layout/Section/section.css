@@ -1,0 +1,13 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.price {
+  padding: 20px;
+  background-color: cornflowerblue;
+}
+
+.header {
+  text-align: center;
+}

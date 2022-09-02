@@ -1,0 +1,21 @@
+.btn {
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.primary {
+  background-color: white;
+  border: none;
+}
+
+.secondary {
+  background-color: green;
+  border: none;
+}
+
+.transparent {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
